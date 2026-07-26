@@ -1,0 +1,260 @@
+%------------------------------------------------------------------------------
+% CV in Latex
+% Author : Charles Rambo
+% Based off of: https://github.com/sb2nov/resume and Jake's Resume on Overleaf
+% Most recently updated version may be found at https://github.com/fizixmastr
+% License : MIT
+%------------------------------------------------------------------------------
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usepackage{fontawesome5}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\input{glyphtounicode}
+
+%-----FONT---------------------------------------------------------------------
+\usepackage{palatino}
+
+%-----PAGE SETUP---------------------------------------------------------------
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-1cm}
+\addtolength{\evensidemargin}{-1cm}
+\addtolength{\textwidth}{2cm}
+\addtolength{\topmargin}{-1cm}
+\addtolength{\textheight}{2cm}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0cm}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that .pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-----CUSTOM COMMANDS FOR FORMATTING SECTIONS----------------------------------
+\newcommand{\CVItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\CVSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \small#3 & \small #4 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\CVSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \text{\small#1} & \text{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\CVSubItem}[1]{\CVItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\CVSubHeadingListStart}{\begin{itemize}[leftmargin=0.5cm, label={}]}
+\newcommand{\CVSubHeadingListEnd}{\end{itemize}}
+\newcommand{\CVItemListStart}{\begin{itemize}}
+\newcommand{\CVItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%------------------------------------------------------------------------------
+% CV STARTS HERE  %
+%------------------------------------------------------------------------------
+\begin{document}
+
+% Footer with last-updated date on every page
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[L]{\footnotesize\thepage\,/\,\pageref{LastPage}}
+\fancyfoot[R]{\footnotesize\itshape Last updated: July 2026}
+
+%-----HEADING------------------------------------------------------------------
+\begin{center}
+\textbf{\Huge \scshape{Hajime Mihara}}\par\vspace{3pt}
+{\small\itshape R\&D Engineer at Sony}\par\vspace{5pt}
+\small
+\faEnvelope\ \href{mailto:Hajime.Mihara@sony.com}{\underline{\smash{Hajime.Mihara@sony.com}}} $|$
+\faEnvelope\ \href{mailto:hajimemihara1108@gmail.com}{\underline{\smash{hajimemihara1108@gmail.com}}} $|$
+\faLinkedin\ \href{https://www.linkedin.com/in/hajimemihara/}{\underline{\smash{linkedin.com/in/hajimemihara}}}
+\end{center}
+
+%-----SUMMARY------------------------------------------------------------------
+\section{Summary}
+ {\small
+ I am an R\&D Engineer at Sony and hold an M.E. in Information Science from the Nara Institute of Science and Technology (NAIST).\par\vspace{4pt}
+ My research interests lie in computer vision, computational photography, and computational imaging. Throughout my career, I have consistently worked at the interface between emerging image sensors, such as polarization, time-of-flight (ToF), and near-infrared sensors, and advanced signal processing, including deep learning and Vision Foundation Models.\par\vspace{4pt}
+ I have published at leading international conferences such as CVPR and ICCP and actively patent my research outcomes, with an emphasis on technologies that can be translated into products and real-world applications. I also collaborate with business units developing media-production technologies, helping turn research innovations into practical systems, technology demonstrations, and public exhibitions.
+ \par}
+
+%-----WORK EXPERIENCE----------------------------------------------------------
+\section{Work Experience}
+  \CVSubHeadingListStart
+    \CVSubheading
+      {R\&D Engineer \textnormal{\emph{$|$ Computer Vision, Image Processing, Computational Photography}}}{Apr. 2016 -- Present}
+      {Sony}{Tokyo, Japan}
+      \CVItemListStart
+        \CVItem{\textbf{\makebox[4.2cm][l]{Oct. 2022 -- Present:} R\&D Center, Sony Semiconductor Solutions Corporation}}
+        \CVItem{\textbf{\makebox[4.2cm][l]{Apr. 2026 -- Present:} Imaging System Technology Div., Sony Corporation (concurrent)}}
+        \CVItem{\makebox[4.2cm][l]{Apr. 2021 -- Sept. 2022:} R\&D Center, Sony Group Corporation (trade name change)}
+        \CVItem{\makebox[4.2cm][l]{Apr. 2016 -- Mar. 2021:} R\&D Center, Sony Corporation}
+      \CVItemListEnd
+  \CVSubHeadingListEnd
+
+%-----EDUCATION----------------------------------------------------------------
+\section{Education}
+  \CVSubHeadingListStart
+    \CVSubheading
+      {Master of Engineering \textnormal{\emph{$|$ Computer Vision, Computational Photography}}}{Apr. 2014 -- Mar. 2016}
+      {Nara Institute of Science and Technology (NAIST)}{Nara, Japan}
+      \CVItemListStart
+        \CVItem{Thesis: ``Graph-cut based Semi-automatic Region Selection for 4D Light-field Editing''}
+        \CVItem{Advisers: Prof. Yasuhiro Mukaigawa, Assoc. Prof. Takuya Funatomi}
+      \CVItemListEnd
+    \CVSubheading
+      {Bachelor of Engineering \textnormal{\emph{$|$ Electrical and Electronics Engineering}}}{Apr. 2012 -- Mar. 2014}
+      {Advanced Course, National Institute of Technology, Asahikawa College}{Hokkaido, Japan}
+      \CVItemListStart
+        \CVItem{Supervisor: Prof. Kohzoh Ohshima}
+      \CVItemListEnd
+    \CVSubheading
+      {Associate Degree \textnormal{\emph{$|$ Electrical and Electronics Engineering}}}{Apr. 2007 -- Mar. 2012}
+      {National Institute of Technology, Asahikawa College}{Hokkaido, Japan}
+  \CVSubHeadingListEnd
+
+%-----PUBLICATIONS-------------------------------------------------------------
+\section{Publications}
+ {\small\itshape Google Scholar: 128 citations, h-index 5, i10-index 4 (as of 2026).}\vspace{2pt}
+ \begin{enumerate}[leftmargin=0.6cm]
+   \small
+   \item C. Li, T. Ono, T. Uemori, S. Nitta, \textbf{H. Mihara}, A. Gatto, H. Nagahara, Y. Moriuchi, ``NeISF++: Neural Incident Stokes Field for Polarized Inverse Rendering of Conductors and Dielectrics,'' \underline{\smash{IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}}, pp. 26493--26503, 2025.
+   \item C. Li, T. Ono, T. Uemori, \textbf{H. Mihara}, A. Gatto, H. Nagahara, Y. Moriuchi, ``NeISF: Neural Incident Stokes Field for Geometry and Material Estimation,'' \underline{\smash{IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}}, pp. 21434--21445, 2024.
+   \item T. Sasaki, Y. Moriuchi, \textbf{H. Mihara}, K. Nakamura, J. Murayama, ``Georeferenced Image Stitching with Pose Optimization Using Image Similarity with Little Overlap,'' Precision Agriculture '21, pp. 677--684, 2021.
+   \item Y. Moriuchi, K. Nakamura, \textbf{H. Mihara}, T. Sasaki, A. Ito, E. Itakura, H. Mori, J. Murayama, ``Robust Vegetation Segmentation for Image-based Field Survey,'' Precision Agriculture '21, pp. 419--426, 2021.
+   \item J. Murayama, Y. Hirasawa, Y. Kondo, Y. Lu, T. Kurita, S. Kaizu, \textbf{H. Mihara}, T. Yamazaki, Y. Maruyama, Y. Uesaka, Y. Matoba, N. Terada, K. Komori, Y. Oba, S. Arakawa, K. Akiyama, Y. Oike, S. Sato, T. Ezaki, ``Back-illuminated CMOS Image Sensor with Built-in Polarizer and Its Applications,'' JSAP Spring Meeting, 2018 (in Japanese).
+   \item \textbf{H. Mihara}, T. Funatomi, K. Tanaka, H. Kubo, H. Nagahara, Y. Mukaigawa, ``4D Light Field Segmentation with Spatial and Angular Consistencies,'' \underline{\smash{IEEE International Conference on Computational Photography (ICCP)}}, pp. 54--61, 2016.
+   \item \textbf{H. Mihara}, T. Iwaguchi, K. Tanaka, H. Kubo, H. Nagahara, Y. Mukaigawa, ``Refocused Image Generation with Occluder Removal Using Light Field,'' IPSJ SIG-CVIM, 2015 (in Japanese).
+   \item \textbf{H. Mihara}, S. Asada, A. Ishihara, T. Iwaguchi, T. Okamoto, K. Tanaka, H. Kubo, Y. Mukaigawa, ``Per-pixel Independent Refocusing Using Light Field,'' JCEEE Kansai, 2014 (in Japanese).
+ \end{enumerate}
+
+%-----PATENTS------------------------------------------------------------------
+\section{Patents}
+ {\small\textit{Granted}}
+ \begin{enumerate}[leftmargin=0.6cm]
+   \small
+   \item S. Kaizu, \textbf{H. Mihara}, T. Kamiya, S. Aotake, ``Signal Processing Device, Signal Processing Method, and Distance-Measuring Module,'' US Patent 12,405,377, 2025.
+   \item \textbf{H. Mihara}, S. Kaizu, T. Kurita, Y. Hirasawa, ``Information Generation Device, Information Generation Method and Program,'' US Patent 12,101,583, 2024.
+   \item \textbf{H. Mihara}, A. Shin, T. Narita, K. Hongo, M. Nakamura, ``Control Device and Control Method for a Movable Body,'' US Patent 12,038,750, 2024.
+   \item \textbf{H. Mihara}, S. Kaizu, T. Kurita, Y. Kondo, Y. Hirasawa, ``Image Processing Device and Image Processing Method,'' US Patent 11,663,831, 2023.
+   \item Y. Hirasawa, Y. Kondo, H. Oyaizu, S. Kaizu, T. Kurita, T. Zhuang, Y. Lu, \textbf{H. Mihara}, ``Image Processing Device and Image Processing Method,'' US Patent 10,812,735, 2020.
+ \end{enumerate}
+ \vspace{2pt}
+ {\small\textit{Pending}}
+ \begin{enumerate}[leftmargin=0.6cm]
+   \small
+   \item \textbf{H. Mihara}, Y. Moriuchi, T. Uemori, L. Sun, ``Image Processing Apparatus and Image Processing Method,'' US Patent App. 18/871,313, 2025.
+   \item M. Fujioka, Y. Moriuchi, K. Nakamura, T. Sasaki, \textbf{H. Mihara}, ``Signal Processing Device and Signal Processing Method,'' US Patent App. 18/573,988, 2024.
+   \item M. Fujioka, Y. Moriuchi, K. Nakamura, T. Sasaki, \textbf{H. Mihara}, ``Signal Processing Apparatus and Signal Processing Method,'' US Patent App. 18/580,008, 2024.
+   \item Y. Moriuchi, K. Nakamura, \textbf{H. Mihara}, T. Sasaki, ``Image Processing Apparatus and Method,'' US Patent App. 17/918,500, 2023.
+   \item \textbf{H. Mihara}, S. Kaizu, ``Signal Processing Device, Signal Processing Method, and Distance Measurement Device,'' US Patent App. 17/779,026, 2022.
+   \item \textbf{H. Mihara}, S. Kaizu, ``Signal Processing Device, Signal Processing Method, and Ranging Module,'' US Patent App. 17/608,059, 2022.
+   \item S. Kaizu, \textbf{H. Mihara}, ``Light Receiving Device and Method for Driving Light Receiving Device,'' US Patent App. 17/597,439, 2022.
+   \item H. Suzuki, A. Irie, T. Kasai, M. Nakamura, T. Narita, \textbf{H. Mihara}, ``Control Device, Control Method, and Program,'' US Patent App. 17/250,328, 2021.
+ \end{enumerate}
+ \vspace{-4pt}
+ {\small \hspace{0.6cm}\emph{$^{*}$ Several of the above are also granted/filed in JP, EP, CN, and DE as family members.}}
+
+%-----HONORS AND AWARDS--------------------------------------------------------
+\section{Honors and Awards}
+  \CVSubHeadingListStart
+    \CVSubheading
+      {Best Student Volunteer Award, SIGGRAPH Asia 2015}{Nov. 2015}
+      {SIGGRAPH Asia 2015, Kobe, Japan}{}
+    \CVSubheading
+      {Award, ITE Kansai Section}{Apr. 2015}
+      {``Per-pixel Independent Refocusing Using Light Field,'' JCEEE Kansai}{}
+    \CVSubheading
+      {Grand Prize, NAIST CICP (Creative and International Competitiveness Project)}{Mar. 2015}
+      {Occluder removal using a light field; selected as the best on-campus research project}{}
+  \CVSubHeadingListEnd
+
+%-----DEMONSTRATIONS-----------------------------------------------------------
+\section{Technology Demonstrations \& Exhibitions}
+ {\small\textit{Presented in Person}}
+  \CVSubHeadingListStart
+    \CVSubheading
+      {Real-time Rendering Demo of NeISF and NeISF++}{Jul. 2025}
+      {IEEE International Conference on Computational Photography (ICCP) 2025}{Toronto, Canada}
+      \CVItemListStart
+        \CVItem{Presented a real-time rendering demo of NeISF and NeISF++ (published at CVPR) at the Sony sponsor booth.}
+      \CVItemListEnd
+    \CVSubheading
+      {Real-time Rendering Demo of NeISF}{Jun. 2024}
+      {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2024}{Seattle, USA}
+      \CVItemListStart
+        \CVItem{Ran a live real-time rendering demo of NeISF (published at CVPR) for attendees at Sony's exhibition booth.}
+      \CVItemListEnd
+    \CVSubheading
+      {Real-time Demo of a Polarization Sensor and Its Applications}{Aug. 2022}
+      {IEEE International Conference on Computational Photography (ICCP) 2022}{Pasadena, USA}
+      \CVItemListStart
+        \CVItem{Demonstrated a polarization image sensor and its applications at the Sony sponsor booth, including a real-time system I built for polarization-based auto white balance (color constancy) based on research by my Sony colleagues (Ono et al., CVPR 2022).}
+      \CVItemListEnd
+  \CVSubHeadingListEnd
+ \vspace{3pt}
+ {\small\textit{Contributed (Research Collaboration)}}
+  \CVSubHeadingListStart
+    \CVSubheading
+      {Real-time Compositing of Live-action Footage and 3DCG via OpenTrackIO}{Jul. 2026}
+      {SIGGRAPH 2026}{Los Angeles, USA}
+      \CVItemListStart
+        \CVItem{Jointly developed a real-time compositing demonstration that combined the business unit's real-time production technology with our research technology (production-quality 3D geometry and material capture using NeISF); presented on-site by the collaborators to a computer-graphics research audience.}
+      \CVItemListEnd
+    \CVSubheading
+      {Real-time Compositing of Live-action Footage and 3DCG via OpenTrackIO}{Apr. 2026}
+      {NAB Show 2026}{Las Vegas, USA}
+      \CVItemListStart
+        \CVItem{Jointly developed a real-time compositing demonstration that combined the business unit's real-time production technology with our research technology (production-quality 3D geometry and material capture using NeISF); presented on-site by the collaborators to broadcast and media-production professionals.}
+      \CVItemListEnd
+  \CVSubHeadingListEnd
+
+%-----SKILLS-------------------------------------------------------------------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.5cm, label={}]
+    \small{\item{
+     \textbf{Research Areas}{: Image Processing, Computer Vision, Computational Photography; sensor-oriented image processing (Polarization, ToF, Near-Infrared)} \\[3pt]
+     \textbf{Machine Learning}{: Deep Learning, PyTorch (CNNs, differentiable rendering)} \\[3pt]
+     \textbf{Data \& Simulation}{: Synthetic dataset generation with Blender (CG); physically-based and differentiable rendering (Mitsuba); data-acquisition system design (sensor and illumination rigs)} \\[3pt]
+     \textbf{Programming}{: Python, C++, CUDA, OpenCV} \\[3pt]
+     \textbf{Tools}{: LaTeX, Microsoft Office, Arduino} \\[3pt]
+     \textbf{Other Experience}{: Technical communication \& demos, maintenance and upgrades of shared computing environments, organized and led a conference-participation report session for an audience of several hundred, contract/privacy compliance coordination with the legal department} \\[3pt]
+     \textbf{Languages}{: Japanese (Native), English (Professional Working Proficiency)}
+    }}
+ \end{itemize}
+
+%------------------------------------------------------------------------------
+\end{document}

@@ -2,10 +2,12 @@
 
 LaTeX source for my CV.
 
+**[Download the latest PDF](CV_Hajime_Mihara.pdf)**
+
 | File | Description |
 | --- | --- |
-| `CV_Hajime_Mihara.tex` | LaTeX source |
-| `CV_Hajime_Mihara.pdf` | Compiled PDF |
+| [`CV_Hajime_Mihara.tex`](CV_Hajime_Mihara.tex) | LaTeX source |
+| [`CV_Hajime_Mihara.pdf`](CV_Hajime_Mihara.pdf) | Compiled PDF |
 
 ## Build
 
